@@ -1,0 +1,20 @@
+AMQP_URI: amqp://${RABBIT_USER:guest}:${RABBIT_PASSWORD:guest}@${RABBIT_HOST:localhost}:${RABBIT_PORT:5672}/
+
+DB_URIS:
+  "http_comic_service:Base": postgresql://${DB_USER:postgres}:${DB_PASSWORD:password}@${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:comic_service}
+  "comic_service:Base": postgresql://${DB_USER:postgres}:${DB_PASSWORD:password}@${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:comic_service}
+
+WEB_SERVER_ADDRESS: '0.0.0.0:8080'
+
+NEWRELIC_INI_PATH: "${NEWRELIC_INI_PATH:newrelic.ini}"
+
+AUTORELOAD: true
+
+LOGGING:
+    version: 1
+    handlers:
+        console:
+            class: logging.StreamHandler
+    root:
+        level: DEBUG
+        handlers: [console]
